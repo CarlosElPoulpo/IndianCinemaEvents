@@ -1,0 +1,13 @@
+{% extends "::layout.html.twig" %}
+
+{% block central_layout %}
+    <main class="no-padding-left no-padding-right">
+        {% block header %}
+        {% endblock %}
+        <div class="container container-fluid">
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </main>
+{% endblock %}

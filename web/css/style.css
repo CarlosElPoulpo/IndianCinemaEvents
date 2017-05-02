@@ -1,0 +1,171 @@
+/*VARIABLES, TOOLS & ADD-ON*/
+/*FONTS*/
+@font-face {
+  font-family: "RenaultLife-Regular";
+  src: url("../font/Renault/RenaultLife-Regular.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Bold";
+  src: url("../font/Renault/RenaultLife-Bold.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-BoldItalic";
+  src: url("../font/Renault/RenaultLife-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Italic";
+  src: url("../font/Renault/RenaultLife-Italic.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-Light";
+  src: url("../font/Renault/RenaultLife-Light.ttf");
+}
+@font-face {
+  font-family: "RenaultLife-LightItalic";
+  src: url("../font/Renault/RenaultLife-LightItalic.ttf");
+}
+/*COLORS*/
+/* line 57, ../sass/_var.scss */
+.first-color {
+  background-color: #FFCC33 !important;
+}
+
+/* line 61, ../sass/_var.scss */
+.first-color-text {
+  color: #FFCC33 !important;
+}
+
+/* line 65, ../sass/_var.scss */
+.second-color {
+  background-color: #333333 !important;
+}
+
+/* line 69, ../sass/_var.scss */
+.second-color-text {
+  color: #333333 !important;
+}
+
+/* line 73, ../sass/_var.scss */
+.third-color {
+  background-color: #666666 !important;
+}
+
+/* line 77, ../sass/_var.scss */
+.third-color-text {
+  color: #666666 !important;
+}
+
+/* line 81, ../sass/_var.scss */
+.fourth-color {
+  background-color: black !important;
+}
+
+/* line 85, ../sass/_var.scss */
+.fourth-color-text {
+  color: black !important;
+}
+
+/* line 89, ../sass/_var.scss */
+.fifth-color {
+  background-color: white !important;
+}
+
+/* line 93, ../sass/_var.scss */
+.fifth-color-text {
+  color: white !important;
+}
+
+/* line 97, ../sass/_var.scss */
+.sixth-color {
+  background-color: #999999 !important;
+}
+
+/* line 101, ../sass/_var.scss */
+.sixth-color-text {
+  color: #999999 !important;
+}
+
+/* line 105, ../sass/_var.scss */
+.seventh-color {
+  background-color: #CCCCCC !important;
+}
+
+/* line 109, ../sass/_var.scss */
+.seventh-color-text {
+  color: #CCCCCC !important;
+}
+
+/* line 1, ../sass/_tools.scss */
+.no-shadow {
+  box-shadow: none !important;
+}
+
+/* line 5, ../sass/_tools.scss */
+.no-padding-left {
+  padding-left: 0;
+}
+
+/* line 9, ../sass/_tools.scss */
+.no-padding-right {
+  padding-right: 0;
+}
+
+/* line 13, ../sass/_tools.scss */
+.no-padding-top {
+  padding-top: 0;
+}
+
+/* line 17, ../sass/_tools.scss */
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+/* line 21, ../sass/_tools.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 25, ../sass/_tools.scss */
+.half-with {
+  width: 50%;
+}
+
+/* YOUR CUSTOM STYLES */
+/* line 1, ../sass/_custom.scss */
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+
+/* Navigation*/
+/* line 9, ../sass/_custom.scss */
+.navbar {
+  background-color: transparent;
+}
+
+/* line 13, ../sass/_custom.scss */
+.top-nav-collapse {
+  background-color: #2E2E2E;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 18, ../sass/_custom.scss */
+  .navbar {
+    background-color: #2E2E2E;
+  }
+}
+/* line 23, ../sass/_custom.scss */
+.full-bg-img {
+  color: #fff;
+}
+
+/* line 27, ../sass/_custom.scss */
+.view {
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(63).jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

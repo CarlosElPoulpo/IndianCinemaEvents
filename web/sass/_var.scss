@@ -1,0 +1,111 @@
+/*FONTS*/
+@font-face {
+  font-family: "RenaultLife-Regular";
+  src: url("../font/Renault/RenaultLife-Regular.ttf");
+}
+
+$first-font: "RenaultLife-Regular";
+
+@font-face {
+  font-family: "RenaultLife-Bold";
+  src: url("../font/Renault/RenaultLife-Bold.ttf");
+}
+
+$second-font: "RenaultLife-Bold";
+
+@font-face {
+  font-family: "RenaultLife-BoldItalic";
+  src: url("../font/Renault/RenaultLife-BoldItalic.ttf");
+}
+
+$third-font: "RenaultLife-BoldItalic";
+
+@font-face {
+  font-family: "RenaultLife-Italic";
+  src: url("../font/Renault/RenaultLife-Italic.ttf");
+}
+
+$fourth-font: "RenaultLife-Italic";
+
+@font-face {
+  font-family: "RenaultLife-Light";
+  src: url("../font/Renault/RenaultLife-Light.ttf");
+}
+
+$fifth-font: "RenaultLife-Light";
+
+@font-face {
+  font-family: "RenaultLife-LightItalic";
+  src: url("../font/Renault/RenaultLife-LightItalic.ttf");
+}
+
+$sixth-font: "RenaultLife-LightItalic";
+
+/*COLORS*/
+$first-color: #FFCC33;
+$first-color-off: #FFDD33;
+$second-color: #333333;
+$second-color-off: #555555;
+$third-color: #666666;
+$sixth-color: #999999;
+$seventh-color: #CCCCCC;
+$seventh-color-off: #e0e0e0;
+$fourth-color: black;
+$fifth-color: white;
+$header-car: rgba(255,255,255, 0.65);
+
+.first-color{
+  background-color: $first-color!important;
+}
+
+.first-color-text{
+  color: $first-color!important;
+}
+
+.second-color{
+  background-color: $second-color!important;
+}
+
+.second-color-text{
+  color: $second-color!important;
+}
+
+.third-color{
+  background-color: $third-color!important;
+}
+
+.third-color-text{
+  color: $third-color!important;
+}
+
+.fourth-color{
+  background-color: $fourth-color!important;
+}
+
+.fourth-color-text{
+  color: $fourth-color!important;
+}
+
+.fifth-color{
+  background-color: $fifth-color!important;
+}
+
+.fifth-color-text{
+  color: $fifth-color!important;
+}
+
+.sixth-color{
+  background-color: $sixth-color!important;
+}
+
+.sixth-color-text{
+  color: $sixth-color!important;
+}
+
+.seventh-color{
+  background-color: $seventh-color!important;
+}
+
+.seventh-color-text{
+  color: $seventh-color!important;
+}

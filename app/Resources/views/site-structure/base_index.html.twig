@@ -1,0 +1,13 @@
+{% extends "::layout.html.twig" %}
+
+{% block stylesheets %} {{ parent() }}
+    <link href="{{ asset("css/menu_on_index.css") }}" rel="stylesheet">
+{% endblock %}
+
+{% block central_layout %}
+    {% block body %}
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %} {{ parent() }}
+{% endblock %}
