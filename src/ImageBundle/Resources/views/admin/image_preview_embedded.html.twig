@@ -1,0 +1,9 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+
+{% block field%}
+    {% if object != null %}
+        <img src="{{ asset(object.image.getWebPath()) }}" class="admin-preview" />
+    {% else %}
+        <span>No picture</span>
+    {% endif %}
+{% endblock %}

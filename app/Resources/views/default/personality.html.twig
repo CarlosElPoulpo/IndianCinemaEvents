@@ -1,0 +1,30 @@
+{% extends ':site-structure:base_index.html.twig' %}
+
+{% block body %}
+    <div class="index-section text-left">
+        <div class="container">
+            <h1>Biographie</h1>
+        </div>
+    </div>
+    <div class="index-section second-color">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{ asset(personality.image.getWebPath()) }}" alt="{{ personality.fullname }}" class="img-fluid">
+                    <br>
+                    <ul class="white-text">
+                        <li><i class="fa fa-birthday-cake"></i> {{ personality.birthdate|date('d-m-Y') }}</li>
+                        <li><i class="fa fa-flag"></i> {{ personality.nationality }}</li>
+                    </ul>
+                </div>
+                <div class="col-8 white-text">
+                    <h1>{{ personality.fullname }}</h1>
+                    {% if personality.title %}
+                        <p>{{ personality.title }}</p>
+                    {% endif %}
+                    {{ personality.description|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

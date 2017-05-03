@@ -1,17 +1,53 @@
-{% extends ':site-structure:base.html.twig' %}
+{% extends ':site-structure:base_index.html.twig' %}
 
 {% block body %}
-    <br>
-    <section id="section-1 row">
-        <h1 class="text-center">Curriculum vitae</h1>
-
-    </section>
-    <section id="section-1">
-        <h1>Projets</h1>
-
-    </section>
-    <section id="section-1">
-        <h1>Formation</h1>
-
-    </section>
+    {% include ":elements:carousel_index.html.twig" %}
+    <div class="index-section second-color fifth-color-text">
+        <div class="container">
+            <h5 class="amber-text"><i class="fa fa-newspaper-o"></i> News</h5>
+            <h3>INDIAN CINEMA EVENTS PRÉSENTE : BAAHUBALI 2</h3>
+            Indian Cinema Events est ravi de vous donner un aperçu de son tout nouveau siteweb indiancinemaevents.fr, à l’occasion de la sortie de ‘Baahubali 2’ (dont nous sommes partenaires, pour la sortie française) avec les 2 projections organisées par notre association à Grenoble, ce dimanche 30 avril 2017 au Cinéma La Nef :
+                <br><br>
+            A 13 :30 en hindi (VOSTFR)<br>
+            A 16 :30 en tamoul (VOSTFR)<br>
+                <br>
+            Nous sommes très heureux d’annoncer que Indian Cinema Events vous proposera la première édition du « Grenoble Indian Film Festival », du 16 au 20 juin 2017 dans la capitale des Alpes…on vous attend, nombreux !
+        </div>
+    </div>
+    <div class="index-section">
+        <div class="container">
+            <div class="row flex-center">
+                <div class="col-4 text-center">
+                    <h3>L'ASSOCIATION 'ICE'</h3>
+                    <p>L'association ICE (Indian Cinema Events) a pour objectif de promouvoir le cinéma indien en France depuis 2003, en organisant notamment des évènements comme par exemple : le Bollywood Day 2004 & Weekend 2005, des sorties, des avant-premières, des projections, mais aussi des meetups avec des acteurs et des réalisateurs.</p>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-6">
+                    <img src="{{ asset("assets/design-images/logos/logo-ice.png") }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index-section second-color fifth-color-text">
+        <div class="container">
+            <h2 class="text-center">L'EQUIPE I.C.E.</h2>
+            <br>
+            {%  include ":elements:carousel_team.html.twig" with {"members": members}%}
+            <div class="text-center">
+                <a href="" class="btn btn-large first-color second-color-text">Découvrez-en plus</a>
+            </div>
+        </div>
+    </div>
+    <div class="index-section">
+        <div class="container">
+            <h2 class="text-center">NOS PARTENARIATS</h2>
+            <br>
+            <div class="flex-center">
+                <div class="col-4"><img src="{{ asset("assets/design-images/logos/logo-pathe.png") }}" alt="" class="img-fluid"></div>
+                <div class="col-4"><img src="{{ asset("assets/design-images/logos/logo-les-6-rex.jpg") }}" alt="" class="img-fluid"></div>
+                <div class="col-4"><img src="{{ asset("assets/design-images/logos/logo-cinema-club.jpg") }}" alt="" class="img-fluid"></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+

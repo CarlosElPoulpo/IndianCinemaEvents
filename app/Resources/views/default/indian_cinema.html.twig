@@ -1,0 +1,46 @@
+{% extends ':site-structure:base_index.html.twig' %}
+
+{% block body %}
+    <div class="index-section text-center">
+        <h1>LE CINEMA INDIEN </h1>
+    </div>
+    <div class="index-section second-color white-text text-center">
+        <h2>L'HISTOIRE DU CINEMA INDIEN</h2>
+    </div>
+    <div class="index-section">
+        <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi eligendi excepturi facilis fuga ipsum itaque laudantium magni natus, odit optio perferendis possimus quam qui, recusandae sapiente sit tempora totam veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt eos facilis ipsam laborum nihil odit
+            placeat quod. Amet consectetur debitis, deleniti dolores, et illum itaque nam nemo praesentium tempore
+            voluptate.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias autem distinctio dolores eius
+            facilis fugiat id impedit inventore ipsa ipsum libero maiores, nesciunt nisi possimus provident quisquam
+            sapiente vitae.</p>
+        </div>
+    </div>
+    <div class="index-section second-color white-text text-center">
+        <h2>LES PERSONNALITES</h2>
+    </div>
+    <section class="section team-section">
+        <div class="container">
+            <br>
+            {% for personalities_row in personalities|batch(3, 'No item') %}
+                <div class="row text-center">
+                    {% for personality in personalities_row %}
+                        {% if personality != 'No item' %}
+                            <div class="col-md-4 mb-r">
+                                <div class="avatar">
+                                    <img src="{{ asset(personality.image.getWebPath()) }}">
+                                </div>
+                                <h4>{{ personality.fullname }}</h4>
+                                <p>{{ personality.birthdate|date('d-M-Y') }}</p>
+                                <a href="{{ path("personality", {"id": personality.id, "slug":personality.slug}) }}">Lire plus <i class="fa fa-eye"></i></a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

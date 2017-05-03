@@ -1,0 +1,9 @@
+services:
+#    image.example:
+#        class: ImageBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    image.admin.image:
+        class: ImageBundle\Admin\ImageAdmin
+        arguments: [~, ImageBundle\Entity\Image, SonataAdminBundle:CRUD]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: hidden, label: Image }

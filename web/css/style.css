@@ -1,29 +1,46 @@
 /*VARIABLES, TOOLS & ADD-ON*/
 /*FONTS*/
-@font-face {
+/*@font-face {
   font-family: "RenaultLife-Regular";
   src: url("../font/Renault/RenaultLife-Regular.ttf");
 }
+
+$first-font: "RenaultLife-Regular";
+
 @font-face {
   font-family: "RenaultLife-Bold";
   src: url("../font/Renault/RenaultLife-Bold.ttf");
 }
+
+$second-font: "RenaultLife-Bold";
+
 @font-face {
   font-family: "RenaultLife-BoldItalic";
   src: url("../font/Renault/RenaultLife-BoldItalic.ttf");
 }
+
+$third-font: "RenaultLife-BoldItalic";
+
 @font-face {
   font-family: "RenaultLife-Italic";
   src: url("../font/Renault/RenaultLife-Italic.ttf");
 }
+
+$fourth-font: "RenaultLife-Italic";
+
 @font-face {
   font-family: "RenaultLife-Light";
   src: url("../font/Renault/RenaultLife-Light.ttf");
 }
+
+$fifth-font: "RenaultLife-Light";
+
 @font-face {
   font-family: "RenaultLife-LightItalic";
   src: url("../font/Renault/RenaultLife-LightItalic.ttf");
 }
+
+$sixth-font: "RenaultLife-LightItalic";*/
 /*COLORS*/
 /* line 57, ../sass/_var.scss */
 .first-color {
@@ -37,12 +54,12 @@
 
 /* line 65, ../sass/_var.scss */
 .second-color {
-  background-color: #333333 !important;
+  background-color: #2c3d4f !important;
 }
 
 /* line 69, ../sass/_var.scss */
 .second-color-text {
-  color: #333333 !important;
+  color: #2c3d4f !important;
 }
 
 /* line 73, ../sass/_var.scss */
@@ -131,41 +148,88 @@
 }
 
 /* YOUR CUSTOM STYLES */
-/* line 1, ../sass/_custom.scss */
+/* Necessary for full page carousel*/
+/* line 4, ../sass/_custom.scss */
 html,
 body,
-header,
 .view {
   height: 100%;
 }
 
-/* Navigation*/
-/* line 9, ../sass/_custom.scss */
-.navbar {
-  background-color: transparent;
+/* line 10, ../sass/_custom.scss */
+.carousel,
+.carousel-item,
+.active {
+  height: 100%;
 }
 
-/* line 13, ../sass/_custom.scss */
+/* line 16, ../sass/_custom.scss */
+.carousel-inner {
+  height: 100%;
+}
+
+/* line 23, ../sass/_custom.scss */
+#carousel-fullscreen .carousel-item:nth-child(1) {
+  background-image: url("../assets/design-images/carousel-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* line 30, ../sass/_custom.scss */
+#carousel-fullscreen .carousel-item:nth-child(2) {
+  background-image: url("../assets/design-images/carousel-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* line 37, ../sass/_custom.scss */
+#carousel-fullscreen .carousel-item:nth-child(3) {
+  background-image: url("../assets/design-images/carousel-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 45, ../sass/_custom.scss */
+.index-section {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+/* line 50, ../sass/_custom.scss */
+footer.page-footer {
+  background-color: #1C2331;
+  margin-top: 0;
+}
+
+/* line 1, ../sass/_navigation.scss */
+.navbar {
+  background-color: #2c3d4f;
+}
+/* line 3, ../sass/_navigation.scss */
+.navbar .navbar-brand {
+  font-weight: bold;
+}
+/* line 6, ../sass/_navigation.scss */
+.navbar .navbar-toggler-icon {
+  color: white !important;
+}
+
+/* line 11, ../sass/_navigation.scss */
+.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+
+/* line 17, ../sass/_navigation.scss */
 .top-nav-collapse {
-  background-color: #2E2E2E;
+  background-color: #2c3d4f;
 }
 
 @media only screen and (max-width: 768px) {
-  /* line 18, ../sass/_custom.scss */
+  /* line 22, ../sass/_navigation.scss */
   .navbar {
-    background-color: #2E2E2E;
+    background-color: #2c3d4f;
   }
-}
-/* line 23, ../sass/_custom.scss */
-.full-bg-img {
-  color: #fff;
-}
-
-/* line 27, ../sass/_custom.scss */
-.view {
-  background: url("https://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(63).jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }

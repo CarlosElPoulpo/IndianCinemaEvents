@@ -1,5 +1,5 @@
 /*FONTS*/
-@font-face {
+/*@font-face {
   font-family: "RenaultLife-Regular";
   src: url("../font/Renault/RenaultLife-Regular.ttf");
 }
@@ -39,12 +39,12 @@ $fifth-font: "RenaultLife-Light";
   src: url("../font/Renault/RenaultLife-LightItalic.ttf");
 }
 
-$sixth-font: "RenaultLife-LightItalic";
+$sixth-font: "RenaultLife-LightItalic";*/
 
 /*COLORS*/
 $first-color: #FFCC33;
 $first-color-off: #FFDD33;
-$second-color: #333333;
+$second-color: rgb(44,61,79);
 $second-color-off: #555555;
 $third-color: #666666;
 $sixth-color: #999999;

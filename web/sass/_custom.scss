@@ -1,33 +1,53 @@
+
+/* Necessary for full page carousel*/
+
 html,
 body,
-header,
 .view {
   height: 100%;
 }
-/* Navigation*/
 
-.navbar {
-  background-color: transparent;
+.carousel,
+.carousel-item,
+.active {
+  height: 100%;
 }
 
-.top-nav-collapse {
-  background-color: #2E2E2E;
+.carousel-inner {
+  height: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #2E2E2E;
+
+#carousel-fullscreen{
+
+  .carousel-item:nth-child(1) {
+    background-image: url("../assets/design-images/carousel-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .carousel-item:nth-child(2) {
+    background-image: url("../assets/design-images/carousel-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .carousel-item:nth-child(3) {
+    background-image: url("../assets/design-images/carousel-3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
-.full-bg-img {
-  color: #fff;
+.index-section{
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
-.view {
-  background: url("https://mdbootstrap.com/img/Photos/Horizontal/People/12-col/img%20(63).jpg")no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+footer.page-footer {
+  background-color: #1C2331;
+  margin-top: 0;
 }

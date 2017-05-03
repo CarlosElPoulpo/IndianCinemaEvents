@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}"/>
+    <link rel="shorcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}"/>
+    <title>{% block title %}THE GRENOBLE INDIAN FILM FESTIVAL{% endblock %}</title>
+    <meta name="description" content="{% block description %} {% endblock %}">
+    {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('css/mdb.min.css') }}">
+        <link href="{{ asset("css/style.min.css") }}" rel="stylesheet">
+    {% endblock %}
+    <meta name="category" content="">
+    <meta name="publisher" content="">
+    <link href="" rel="publisher" />
+    {% block open_graph %}
+        <meta property="og:url" content="{{ app.request.uri }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="" />
+        <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost }}" />
+    {% endblock %}
+</head>
+<body>
+{% include':festival/site-structure:navigation.html.twig' %}
+{% block central_layout %}
+
+{% endblock %}
+{% include':festival/site-structure:footer.html.twig' %}
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    $(
+    {% include ":elements:analytics_track_code.html.twig" %}
+{% endblock %}
+</body>
+</html>

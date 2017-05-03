@@ -1,0 +1,25 @@
+.navbar {
+  background-color: $second-color;
+  .navbar-brand{
+    font-weight: bold;
+  }
+  .navbar-toggler-icon{
+    color: white!important;
+  }
+}
+
+.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.top-nav-collapse {
+  background-color: $second-color;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: $second-color;
+  }
+}

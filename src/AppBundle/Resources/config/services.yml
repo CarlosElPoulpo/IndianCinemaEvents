@@ -1,0 +1,12 @@
+services:
+    app.admin.member:
+        class: AppBundle\Admin\MemberAdmin
+        arguments: [~, AppBundle\Entity\Member, AppBundle:MemberAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Member }
+
+    app.admin.personality:
+        class: AppBundle\Admin\PersonalityAdmin
+        arguments: [~, AppBundle\Entity\Personality, AppBundle:PersonalityAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Personality }
