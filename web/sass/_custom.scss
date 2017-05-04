@@ -17,14 +17,15 @@ body,
   height: 100%;
 }
 
-
 #carousel-fullscreen{
+
+  height: 80%;
 
   .carousel-item:nth-child(1) {
     background-image: url("../assets/design-images/carousel-1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top;
   }
 
   .carousel-item:nth-child(2) {
@@ -42,12 +43,28 @@ body,
   }
 }
 
+#carousel-fullscreen-festival{
+
+  height: 80%;
+
+  .carousel-item:nth-child(1) {
+    background-image: url("../assets/design-images/indian-film-festival.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 .index-section{
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 80px;
+  padding-top: 80px;
 }
 
 footer.page-footer {
   background-color: #1C2331;
   margin-top: 0;
+}
+
+.indian-festival-logo{
+  line-height: 18px;
 }

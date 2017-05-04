@@ -52,5 +52,50 @@ class DefaultController extends Controller
         return $this->render('default/personality.html.twig', array("personality"=> $personality));
     }
 
+    /**
+     * @Route("/events", name="events")
+     */
+    public function eventsAction()
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Event");
+        $present_events = $repository->present();
+        $old_events = $repository->archived();
 
+        return $this->render('default/events.html.twig', array("present_events"=> $present_events, "old_events"=> $old_events));
+    }
+
+    /**
+     * @Route("/event/{id}/{slug}", name="detail_event")
+     */
+    public function detailEventAction($id, $slug)
+    {
+        $repository = $this->getDoctrine()->getRepository("AppBundle:Event");
+        $event = $repository->findOneBy(array('id'   => $id, 'slug' => $slug));
+
+        return $this->render('default/detail_event.html.twig', array("event"=> $event));
+    }
+
+    /**
+     * @Route("/films", name="films")
+     */
+    public function filmsAction()
+    {
+        /*$repository = $this->getDoctrine()->getRepository("AppBundle:Event");
+        $present_events = $repository->present();
+        $old_events = $repository->archived();*/
+
+        return $this->render('default/films.html.twig');
+    }
+
+    /**
+     * @Route("/gallery", name="gallery")
+     */
+    public function galleryAction()
+    {
+        /*$repository = $this->getDoctrine()->getRepository("AppBundle:Event");
+        $present_events = $repository->present();
+        $old_events = $repository->archived();*/
+
+        return $this->render('default/gallery.html.twig');
+    }
 }

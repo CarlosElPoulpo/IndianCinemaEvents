@@ -1,20 +1,22 @@
 <?php
-
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use BehaviorFixtures\ORM\TranslatableEntity;
+use Doctrine\ORM\Mapping as ORM;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Sonata\TranslationBundle\Model\TranslatableInterface;
 
 /**
- * Member
- *
  * @ORM\Table(name="member")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\MemberRepository")
+ * @ORM\Entity()
  */
-class Member
+class Member implements TranslatableInterface
 {
+    use ORMBehaviors\Translatable\Translatable;
+
     /**
-     * @var int
+     * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -37,21 +39,7 @@ class Member
     private $lastname;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="jobtitle", type="string", length=255, nullable=true)
-     */
-    private $jobtitle;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="description", type="text")
-     */
-    private $description;
-
-    /**
-     * @Gedmo\Slug(fields={"name","lastname","jobtitle"})
+     * @Gedmo\Slug(fields={"name","lastname"})
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
@@ -70,9 +58,7 @@ class Member
     private $arrange;
 
     /**
-     * Get id
-     *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -80,11 +66,16 @@ class Member
     }
 
     /**
-     * Set name
-     *
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
      * @param string $name
-     *
-     * @return Member
+     * @return $this
      */
     public function setName($name)
     {
@@ -94,14 +85,24 @@ class Member
     }
 
     /**
-     * Get name
-     *
+     * @param string $locale
+     * @return $this
+     */
+    public function setLocale($locale)
+    {
+        $this->setCurrentLocale($locale);
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
-    public function getName()
+    public function getLocale()
     {
-        return $this->name;
+        return $this->getCurrentLocale();
     }
+
 
     /**
      * Set lastname
@@ -128,54 +129,6 @@ class Member
     }
 
     /**
-     * Set jobtitle
-     *
-     * @param string $jobtitle
-     *
-     * @return Member
-     */
-    public function setJobtitle($jobtitle)
-    {
-        $this->jobtitle = $jobtitle;
-
-        return $this;
-    }
-
-    /**
-     * Get jobtitle
-     *
-     * @return string
-     */
-    public function getJobtitle()
-    {
-        return $this->jobtitle;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Member
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
      * Set slug
      *
      * @param string $slug
@@ -197,16 +150,6 @@ class Member
     public function getSlug()
     {
         return $this->slug;
-    }
-
-    public function getFullname()
-    {
-        return $this->name." ".$this->lastname;
-    }
-
-    public function __toString()
-    {
-        return $this->getFullname();
     }
 
     /**
@@ -255,5 +198,61 @@ class Member
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set jobtitle
+     *
+     * @param string $jobtitle
+     * @return $this
+     */
+    public function setJobtitle($jobtitle)
+    {
+        $this->translate(null, false)->setDescription($jobtitle);
+
+        return $this;
+    }
+
+    /**
+     * Get jobtitle
+     *
+     * @return string
+     */
+    public function getJobtitle()
+    {
+        return $this->translate(null, false)->getJobtitle();
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->translate(null, false)->setDescription($description);
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->translate(null, false)->getDescription();
+    }
+
+    public function getFullname()
+    {
+        return $this->name." ".$this->lastname;
+    }
+
+    public function __toString()
+    {
+        return $this->getFullname();
     }
 }

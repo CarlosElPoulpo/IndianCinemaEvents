@@ -5,18 +5,20 @@
             {% set buttons = buttons|merge([loop.index-1]) %}
             <div class="carousel-item {% if loop.index == 1 %}active{% endif %}">
                 {% for member in member_row %}
-                    <div class="col-4 text-center">
+                    {% if member != 'No item' %}
+                        <div class="col-4 text-center">
 
-                        <div class="avatar">
-                            <img src="{{ asset(member.image.getWebPath()) }}" class="rounded-circle" width="80%">
+                            <div class="avatar">
+                                <img src="{{ asset(member.image.getWebPath()) }}" class="rounded-circle" width="80%">
+                            </div>
+                            <br>
+                            <h4>{{ member.fullname }}</h4>
+                            <!--{% if member.jobtitle %}
+                                <h5>{{ member.jobtitle }}</h5>
+                            {% endif %}-->
+                            <p>{{ member.description|slice(0, 100)~" ..." }}</p>
                         </div>
-                        <br>
-                        <h4>{{ member.fullname }}</h4>
-                        <!--{% if member.jobtitle %}
-                            <h5>{{ member.jobtitle }}</h5>
-                        {% endif %}-->
-                        <p>{{ member.description|slice(0, 100)~" ..." }}</p>
-                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         {% endfor %}

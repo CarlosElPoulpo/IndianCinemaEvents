@@ -1,0 +1,80 @@
+{% extends ':site-structure:base_index.html.twig' %}
+
+{% block body %}
+    <div class="index-section text-center">
+        <h2>LES ÉVÉNEMENTS À VENIR</h2>
+    </div>
+    <div class="index-section grey lighten-4">
+        <div class="container">
+        {% for events_row in present_events|batch(3, 'No item') %}
+                {% for event in events_row %}
+                    {% if event != 'No item' and event.visible %}
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-md-5 mb-r">
+                                    <div class="view overlay hm-white-slight">
+                                        <img src="{{ asset(event.image.getWebPath()) }}" alt="{{ event.title }}" class="img-fluid">
+                                        <a>
+                                            <div class="mask waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-7 mb-r">
+                                    <a class="second-color-text"><h5>Projection de films</h5></a>
+                                    <h4>{{ event.title }}</h4>
+                                    <p>{{ event.subtitle }}</p>
+
+                                    <!--<a href="{{ path("detail_event", {"id": event.id, "slug": event.slug}) }}" class="second-color-text">Read more <i class="fa fa-eye"></i></a>-->
+                                    <p><small>Du {{ event.startdate|date('d-m-Y') }} au {{ event.enddate|date('d-m-Y') }}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        {% else %}
+            <p class="text-center">Aucuns éléments</p>
+        {% endfor %}
+        </div>
+    </div>
+    <div class="index-section second-color white-text text-center">
+        <h2>ARCHIVES - ANCIENS ÉVÉNEMENTS</h2>
+    </div>
+    <div class="index-section">
+        <div class="container">
+            <br>
+            {% for events_row in old_events|batch(3, 'No item') %}
+                <div class="row">
+                    {% for event in events_row %}
+                        {% if event != 'No item' and event.visible %}
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-md-5 mb-r">
+                                        <div class="view overlay hm-white-slight">
+                                            <img src="{{ asset(event.image.getWebPath()) }}" alt="{{ event.title }}" class="img-fluid">
+                                            <a>
+                                                <div class="mask waves-effect waves-light"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-7 mb-r">
+                                        <a class="second-color-text"><h5>Fashion</h5></a>
+                                        <h4>{{ event.title }}</h4>
+                                        <p>{{ event.subtitle }}</p>
+
+                                        <!--<a href="{{ path("detail_event", {"id": event.id, "slug": event.slug}) }}" class="second-color-text">Read more <i class="fa fa-eye"></i></a>-->
+                                        <p><small>Du {{ event.startdate|date('d-m-Y') }} au {{ event.enddate|date('d-m-Y') }}</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-center">Aucuns éléments archivés</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -118,31 +118,36 @@ $sixth-font: "RenaultLife-LightItalic";*/
 }
 
 /* line 5, ../sass/_tools.scss */
-.no-padding-left {
-  padding-left: 0;
+.no-padding {
+  padding: 0 !important;
 }
 
 /* line 9, ../sass/_tools.scss */
-.no-padding-right {
-  padding-right: 0;
+.no-padding-left {
+  padding-left: 0 !important;
 }
 
 /* line 13, ../sass/_tools.scss */
-.no-padding-top {
-  padding-top: 0;
+.no-padding-right {
+  padding-right: 0 !important;
 }
 
 /* line 17, ../sass/_tools.scss */
-.no-padding-bottom {
-  padding-bottom: 0;
+.no-padding-top {
+  padding-top: 0 !important;
 }
 
 /* line 21, ../sass/_tools.scss */
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+/* line 25, ../sass/_tools.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 25, ../sass/_tools.scss */
+/* line 29, ../sass/_tools.scss */
 .half-with {
   width: 50%;
 }
@@ -168,21 +173,25 @@ body,
   height: 100%;
 }
 
-/* line 23, ../sass/_custom.scss */
+/* line 20, ../sass/_custom.scss */
+#carousel-fullscreen {
+  height: 80%;
+}
+/* line 24, ../sass/_custom.scss */
 #carousel-fullscreen .carousel-item:nth-child(1) {
   background-image: url("../assets/design-images/carousel-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
 }
-/* line 30, ../sass/_custom.scss */
+/* line 31, ../sass/_custom.scss */
 #carousel-fullscreen .carousel-item:nth-child(2) {
   background-image: url("../assets/design-images/carousel-2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-/* line 37, ../sass/_custom.scss */
+/* line 38, ../sass/_custom.scss */
 #carousel-fullscreen .carousel-item:nth-child(3) {
   background-image: url("../assets/design-images/carousel-3.jpg");
   background-repeat: no-repeat;
@@ -190,16 +199,33 @@ body,
   background-position: center;
 }
 
-/* line 45, ../sass/_custom.scss */
-.index-section {
-  padding-bottom: 100px;
-  padding-top: 100px;
+/* line 46, ../sass/_custom.scss */
+#carousel-fullscreen-festival {
+  height: 80%;
+}
+/* line 50, ../sass/_custom.scss */
+#carousel-fullscreen-festival .carousel-item:nth-child(1) {
+  background-image: url("../assets/design-images/indian-film-festival.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-/* line 50, ../sass/_custom.scss */
+/* line 58, ../sass/_custom.scss */
+.index-section {
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+/* line 63, ../sass/_custom.scss */
 footer.page-footer {
   background-color: #1C2331;
   margin-top: 0;
+}
+
+/* line 68, ../sass/_custom.scss */
+.indian-festival-logo {
+  line-height: 18px;
 }
 
 /* line 1, ../sass/_navigation.scss */

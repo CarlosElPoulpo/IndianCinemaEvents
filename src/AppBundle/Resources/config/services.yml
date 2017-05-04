@@ -1,12 +1,24 @@
 services:
-    app.admin.member:
-        class: AppBundle\Admin\MemberAdmin
-        arguments: [~, AppBundle\Entity\Member, AppBundle:MemberAdmin]
+    app.locale_listener:
+        class: AppBundle\EventListener\LocaleListener
+        arguments: ['%kernel.default_locale%']
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Member }
+            - { name: kernel.event_subscriber }
 
     app.admin.personality:
         class: AppBundle\Admin\PersonalityAdmin
         arguments: [~, AppBundle\Entity\Personality, AppBundle:PersonalityAdmin]
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Personality }
+
+    app.admin.event:
+        class: AppBundle\Admin\EventAdmin
+        arguments: [~, AppBundle\Entity\Event, AppBundle:EventAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Event }
+
+    app.admin.member:
+        class: AppBundle\Admin\MemberAdmin
+        arguments: [~, AppBundle\Entity\Member, AppBundle:MemberAdmin]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Member }

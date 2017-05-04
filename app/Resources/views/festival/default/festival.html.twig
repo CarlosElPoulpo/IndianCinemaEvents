@@ -1,42 +1,51 @@
 {% extends ':festival/site-structure:base_index.html.twig' %}
 
+{% block open_graph %}
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="THE GRENOBLE INDIAN FILM FESTIVAL" />
+    <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ "/assets/design-images/indian-film-festival.jpg" }}" />
+{% endblock %}
+
 {% block body %}
     {% include ":festival/elements:carousel_festival.html.twig" %}
     <div id="the-festival" class="index-section">
         <div class="container">
             <div class="row flex-center">
-                <div class="col-6">
-                    <h1 class="text-right">THE GRENOBLE <br>INDIAN FILM FESTIVAL</h1>
+                <div class="col-md-6">
+                    <h1 class="text-right bold">THE GRENOBLE <br>INDIAN FILM FESTIVAL</h1>
                     <br>
                     <div>
-                        <h4>The Festival</h4>
+                        <h4 class="bold">The Festival</h4>
                         <p>For the flrst lime in Grenoble, discover The Grenoble lndian Film Festival ! When lndian
                             cinema meets the capital of the French Alps, be ready to discover lndia's most controversial
                             film maker, the one and only, Anurag Kashyap. Join us for a 3-day event with the very best
                             of Kashyap. </p>
-                        <h4>Anurag Kashyap</h4>
+                        <br>
+                        <h4 class="bold">Anurag Kashyap</h4>
                         <p>Anurag Kashyap is an lndian film writer, director, producer, and actor. He is often regarded
                             as the face of an emerging new wave cinema for producing numerous independent films with
                             newcomers. For his contributions to film, the Government of France awarded him the "Ordre
                             des Arts et des Lettres" in 2013. </p>
-                        <h4>Informations</h4>
+                        <br>
+                        <h4 class="bold">Informations</h4>
                         <p>From june 2nd to june 4th 2017 <br>
                             3 Days - 15 films- 3 Cinema Halls : Le Méliès, Le 6 Rex & Le Club. </p>
                     </div>
                 </div>
-                <div class="col-6 flex-center">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" alt="" class="rounded-circle">
+                <div class="col-md-6 flex-center">
+                    <img src="{{ asset("assets/design-images/festival-man.jpg") }}" alt="" class="rounded-circle">
                 </div>
             </div>
         </div>
     </div>
     <div id="program" class="index-section second-color">
         <div class="container white-text">
-            <h2 class="text-right">FESTIVAL PROGRAM</h2>
-            <h4 class="text-right">PROGRAM FOR THE 3 DAYS</h4>
-            <p>Proin sollicitudin consectetur leo nec gravida. In ut vehicula purus, ac aliquam nisi. Cras posuere
+            <h2 class="text-left">FESTIVAL PROGRAM</h2>
+            <h5 class="text-left">PROGRAM FOR THE 3 DAYS</h5>
+            <!--<p>Proin sollicitudin consectetur leo nec gravida. In ut vehicula purus, ac aliquam nisi. Cras posuere
                 sagittis justo, in condimentum tortor tincidunt ac. Duis dignissim augue non mattis tincidunt. Praesent
-                volutpat quis erat vitae molestie.</p>
+                volutpat quis erat vitae molestie.</p>-->
             <section class="section black-text">
                 <div class="row">
 
@@ -55,13 +64,19 @@
                             <!--/.Price-->
 
                             <!--Features-->
-                            <div class="card-block striped">
-                                <ul>
-                                    <li>LE MELIES: Bombay Velvet, at 2:30PM</li>
-                                    <li>LE MELIES: Masaan, at 2:30PM</li>
-                                    <li>6REX: Hunterr, at 2:30PM</li>
-                                    <li>LE MELIES: Closing party at 6:00PM</li>
-                                </ul>
+                            <div class="card-block striped text-left">
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> PATHÉ CHAVANT <br>
+                                    <small>6:00 PM - Raman Raghav 2..0 pre-opening diffusion</small><br>
+                                </p>
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> LE MÉLIÈS <br>
+                                    <small>6:00 PM - Udaan pre-opening diffusion</small><br>
+                                </p>
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> 6 REX <br>
+                                    <small>6:00 PM - Ugly pre-opening diffusion</small><br>
+                                </p>
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> LA BASTILLE <br>
+                                    <small>9:00 PM - Opening party of the grenoble Indian Film Festival and the GIFF's team. Exhibitions around the filmmaker, DJs, buffet</small><br>
+                                </p>
                             </div>
                             <!--/.Features-->
 
@@ -86,13 +101,23 @@
                             <!--/.Price-->
 
                             <!--Features-->
-                            <div class="card-block striped">
-                                <ul>
-                                    <li>LE MELIES: Bombay Velvet, at 2:30PM</li>
-                                    <li>LE MELIES: Masaan, at 2:30PM</li>
-                                    <li>6REX: Hunterr, at 2:30PM</li>
-                                    <li>LE MELIES: Closing party at 6:00PM</li>
-                                </ul>
+                            <div class="card-block striped text-left">
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> PATHÉ CHAVANT <br>
+                                    <small>2:30 PM - Gangs of Wasseypur part.1</small><br>
+                                    <small>6:00 PM - Bombay Talkies</small><br>
+                                    <small>9:00 PM - Gangs of Wasseypur part.2</small><br>
+                                </p>
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> LE MÉLIÈS <br>
+                                    <small>10:00 AM - Beginning of exhibitions</small><br>
+                                    <small>11:00 AM - Conferences around the filmmaker</small><br>
+                                    <small>2:30 PM - No Smoking</small><br>
+                                    <small>6:00 PM - Aiyyaa</small><br>
+                                    <small>9:00 PM - Akira</small><br></p>
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> 6 REX <br>
+                                    <small>2:30 PM - NH10</small><br>
+                                    <small>6:00 PM - Lootera</small><br>
+                                    <small>9:00 PM - Paanch</small><br>
+                                </p>
                             </div>
                             <!--/.Features-->
 
@@ -116,13 +141,15 @@
                             <!--/.Price-->
 
                             <!--Features-->
-                            <div class="card-block striped">
-                                <ul>
-                                    <li>LE MELIES: Bombay Velvet, at 2:30PM</li>
-                                    <li>LE MELIES: Masaan, at 2:30PM</li>
-                                    <li>6REX: Hunterr, at 2:30PM</li>
-                                    <li>LE MELIES: Closing party at 6:00PM</li>
-                                </ul>
+                            <div class="card-block striped text-left">
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> LE MÉLIÈS <br>
+                                    <small>2:30 PM - Bombay Velvet </small><br>
+                                    <small>2:30 PM - Masaan</small><br>
+                                    <small>6:00 PM - Closing party</small><br>
+                                </p>
+                                <p class="bold"><i class="fa fa-angle-double-right"></i> 6 REX <br>
+                                    <small>2:30 PM - Hunterr</small>
+                                </p>
                             </div>
                             <!--/.Features-->
 
@@ -138,32 +165,32 @@
         </div>
     </div>
 
-    <div id="gallery" class="index-section">
+    <div id="gallery">
         <div class="container">
-
+            <img src="{{ asset("assets/design-images/Films.PNG") }}" alt="" class="img-fluid">
         </div>
     </div>
 
     <div id="the-association" class="index-section grey">
         <div class="container">
             <div class="row flex-center">
-                <div class="col-6">
-                    <h1 class="text-right">THE ASSOCIATION<br>''INDIAN CINEMA EVENT''</h1>
+                <div class="col-md-6">
+                    <h1 class="text-right bold">THE ASSOCIATION<br>''INDIAN CINEMA EVENT''</h1>
                     <br>
-                    <div>
+                    <div class="text-center">
                        <p>The ICE association promotes lndian cinema in France since 2003 via events: Bollywood Day 2004 & Weekend 2005, releases, premieres, screenings, Resto Meetups with film makers. </p>
+                        <a href="{{ path("homepage") }}" class="btn first-color second-color-text">Voir le site web</a>
                     </div>
                 </div>
-                <div class="col-6 flex-center">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRannouSonia&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1746058612296568" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                </div>
+                <div class="col-md-6 flex-center">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FIndianCinemaEvents&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1746058612296568" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>                </div>
             </div>
         </div>
     </div>
 
     <div id="partnerships" class="index-section">
         <div class="container">
-            <h2 class="text-center">PARTNERSHIPS</h2>
+            <h2 class="text-center bold">PARTNERSHIPS</h2>
             <br>
             <div class="flex-center">
                 <div class="col-4"><img src="{{ asset("assets/design-images/logos/logo-embassy-india.png") }}" alt=""

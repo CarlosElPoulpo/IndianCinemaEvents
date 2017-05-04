@@ -4,20 +4,23 @@
         <div class="row text-center">
 
             <div class="col-md-4">
-                <h5 class="title">RESEAUX SOCIAUX</h5>
-                <a class="btn-floating btn-large btn-fb"><i class="fa fa-facebook"></i></a>
-                <a class="btn-floating btn-large btn-tw"><i class="fa fa-twitter"></i></a>
-                <a class="btn-floating btn-large btn-gplus"><i class="fa fa-google-plus"></i></a>
+                <ul class="lang-menu">
+                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
+                    <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">English</a></li>
+                </ul>
             </div>
 
             <div class="col-md-4">
-                <h5 class="title">CONTACT</h5>
-
+                <h5 class="title">RÉSEAUX SOCIAUX</h5>
+                <a href="https://www.facebook.com/IndianCinemaEvents/?ref=ts&fref=ts" class="btn-floating btn-large btn-fb"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/RannouSonia" class="btn-floating btn-large btn-tw"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/channel/UC03XS6N2L7Xqb6TtTaLTaYA" class="btn-floating btn-large btn-gplus"><i class="fa fa-youtube"></i></a>
             </div>
 
             <div class="col-md-4">
-                <h5 class="title">PAGE FACEBOOK</h5>
+                <!--<h5 class="title">PAGE FACEBOOK</h5>
                 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRannouSonia&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1746058612296568" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            -->
             </div>
         </div>
     </div>

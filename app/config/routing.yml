@@ -1,6 +1,10 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: fr|en|
+    defaults: { _locale: fr }
 
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"

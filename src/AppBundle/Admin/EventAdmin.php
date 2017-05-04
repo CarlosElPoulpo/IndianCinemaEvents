@@ -2,14 +2,14 @@
 
 namespace AppBundle\Admin;
 
-use A2lix\TranslationFormBundle\Form\Type\TranslationsType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class MemberAdmin extends AbstractAdmin
+class EventAdmin extends AbstractAdmin
 {
     /**
      * @param DatagridMapper $datagridMapper
@@ -17,10 +17,14 @@ class MemberAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name')
-            ->add('lastname')
+            ->add('title')
+            ->add('subtitle')
+            ->add('description')
+            ->add('place')
+            ->add('startdate')
+            ->add('enddate')
+            ->add('visible')
             ->add('slug')
-            ->add('arrange')
         ;
     }
 
@@ -31,10 +35,13 @@ class MemberAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('image', null, array("template"=> ":admin:list_image.html.twig"))
-            ->add('name')
-            ->add('lastname')
+            ->add('title')
+            ->add('subtitle')
+            ->add('place')
+            ->add('startdate')
+            ->add('enddate')
+            ->add('visible',null, array('editable' => true, 'required' => 'true'))
             ->add('slug')
-            ->add('arrange')
             ->add('_action', null, array(
                 'actions' => array(
                     'show' => array(),
@@ -51,15 +58,17 @@ class MemberAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name')
-            ->add('lastname')
             ->add('image', 'sonata_type_model_list', array(
                 'required' => true,
                 'btn_list' => false,
             ))
-            ->add('translations', TranslationsType::class)
-            ->add('arrange')
-
+            ->add('title')
+            ->add('subtitle')
+            ->add('description', CKEditorType::class)
+            ->add('place')
+            ->add('startdate', 'sonata_type_date_picker', array('format' => 'dd-MM-yyyy'))
+            ->add('enddate', 'sonata_type_date_picker', array('format' => 'dd-MM-yyyy'))
+            ->add('visible')
         ;
     }
 
@@ -69,10 +78,14 @@ class MemberAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('name')
-            ->add('lastname')
+            ->add('title')
+            ->add('subtitle')
+            ->add('description')
+            ->add('place')
+            ->add('startdate')
+            ->add('enddate')
+            ->add('visible')
             ->add('slug')
-            ->add('arrange')
         ;
     }
 }

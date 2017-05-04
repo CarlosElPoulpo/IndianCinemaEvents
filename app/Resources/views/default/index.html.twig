@@ -1,9 +1,25 @@
 {% extends ':site-structure:base_index.html.twig' %}
 
+{% block open_graph %}
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ICE - Indian Cinema Events" />
+    <meta property="og:image" content="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ "/assets/design-images/carousel-1.jpg" }}" />
+{% endblock %}
+
 {% block body %}
     {% include ":elements:carousel_index.html.twig" %}
     <div class="index-section second-color fifth-color-text">
         <div class="container">
+            <h2>Message exclusif de l'équipe de Baahubali pour ICE</h2>
+            <div class="d-flex flex-center">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/8SGI4sUqnw4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <br>
             <h5 class="amber-text"><i class="fa fa-newspaper-o"></i> News</h5>
             <h3>INDIAN CINEMA EVENTS PRÉSENTE : BAAHUBALI 2</h3>
             Indian Cinema Events est ravi de vous donner un aperçu de son tout nouveau siteweb indiancinemaevents.fr, à l’occasion de la sortie de ‘Baahubali 2’ (dont nous sommes partenaires, pour la sortie française) avec les 2 projections organisées par notre association à Grenoble, ce dimanche 30 avril 2017 au Cinéma La Nef :
@@ -17,20 +33,38 @@
     <div class="index-section">
         <div class="container">
             <div class="row flex-center">
-                <div class="col-4 text-center">
-                    <h3>L'ASSOCIATION 'ICE'</h3>
+                <div class="col-md-4 text-center">
+                    <h3 class="bold">L'ASSOCIATION 'ICE'</h3>
+                    <br>
                     <p>L'association ICE (Indian Cinema Events) a pour objectif de promouvoir le cinéma indien en France depuis 2003, en organisant notamment des évènements comme par exemple : le Bollywood Day 2004 & Weekend 2005, des sorties, des avant-premières, des projections, mais aussi des meetups avec des acteurs et des réalisateurs.</p>
                 </div>
-                <div class="col-2"></div>
-                <div class="col-6">
+                <div class="col-md-2"></div>
+                <div class="col-md-6">
                     <img src="{{ asset("assets/design-images/logos/logo-ice.png") }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index-section second-color white-text text-center">
+        <h2>ÉVÉNEMENT À VENIR</h2>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 no-padding"><img src="{{ asset("assets/design-images/indian-film-festival.jpg") }}" alt="" class="img-fluid"></div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h2 class="bold">GRENOBLE INDIAN FILM FESTIVAL</h2>
+                <div class="text-left">
+                    <p>For the flrst lime in Grenoble, discover The Grenoble lndian Film Festival ! When lndian cinema meets
+                                the capital of the French Alps, be ready to discover lndia's most controversial film maker, the one
+                                and only, Anurag Kashyap. Join us for a 3-day event with the very best of Kashyap. </p>
+                                <a href="{{ path('festival') }}" class="btn btn-large first-color second-color-text">J'y vais !</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="index-section second-color fifth-color-text">
         <div class="container">
-            <h2 class="text-center">L'EQUIPE I.C.E.</h2>
+            <h2 class="text-center">L'ÉQUIPE I.C.E.</h2>
             <br>
             {%  include ":elements:carousel_team.html.twig" with {"members": members}%}
             <div class="text-center">

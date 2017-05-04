@@ -60,7 +60,7 @@ class PersonalityAdmin extends AbstractAdmin
                 'btn_list' => false,
             ))
             ->add('title')
-            ->add('description', CKEditorType::class, array())
+            ->add('description', CKEditorType::class)
             ->add('nationality')
             ->add('birthdate', 'sonata_type_date_picker', array('format' => 'dd-MM-yyyy'))
         ;
